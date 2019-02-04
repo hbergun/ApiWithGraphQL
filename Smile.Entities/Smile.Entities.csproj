@@ -9,6 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Smile.Core\Smile.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="System">
       <HintPath>System</HintPath>
     </Reference>

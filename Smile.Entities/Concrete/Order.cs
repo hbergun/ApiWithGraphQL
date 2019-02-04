@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Smile.Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Smile.Entities.Concrete
 {
-    public class Order
+    public class Order : IEntity
     {
         public int OrderID { get; set; }
         public DateTime OrderDate { get; set; }

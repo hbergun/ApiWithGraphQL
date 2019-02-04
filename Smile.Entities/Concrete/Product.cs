@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Smile.Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Smile.Entities.Concrete
 {
-    public class Product
+    public class Product : IEntity
     {
         public int ProductID { get; set; }
         public string ProductName { get; set; }
