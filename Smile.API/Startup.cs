@@ -10,6 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Smile.Business.Abstract;
+using Smile.Business.Concrete;
+using Smile.DataAccess.Abstract;
+using Smile.DataAccess.Concrete.EntityFramework;
 
 namespace Smile.API
 {
@@ -26,6 +30,8 @@ namespace Smile.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddScoped<IProductService, ProductManager>();
+            services.AddScoped<IProductDAL,EFProductDAL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

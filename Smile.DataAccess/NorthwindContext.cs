@@ -13,6 +13,13 @@ namespace Smile.DataAccess
             optionsBuilder.UseSqlServer(@"Data Source=DELL-PC;Integrated Security=True;Database=Northwind;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<OrderDetail>()
+                 .HasKey(od => new { od.OrderID, od.ProductID });
+              
+        }
+
         public DbSet<Category> Categories { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Order> Orders { get; set; }

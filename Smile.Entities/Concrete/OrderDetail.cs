@@ -7,6 +7,7 @@ namespace Smile.Entities.Concrete
 {
     public class OrderDetail : IEntity
     {
+       
         public int OrderID { get; set; }
         public int ProductID { get; set; }
         public decimal UnitPrice { get; set; }
